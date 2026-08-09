@@ -4,26 +4,62 @@
    ========================================================= */
 
 :root {
-  --srp-charcoal: #1c2523;
   --srp-green: #2f6b4f;
   --srp-green-light: #5f9e6e;
   --srp-cream: #f7f6f1;
   --srp-white: #ffffff;
+  --srp-charcoal: #1c2523;
   --srp-text: #202522;
 }
 
-/* Main page */
-body {
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+html.light body {
   background-color: var(--srp-cream);
   color: var(--srp-text);
 }
 
-/* Header */
-header {
+html.light header {
   background-color: var(--srp-white);
 }
 
-/* Links */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: var(--srp-charcoal);
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+html.dark body {
+  background-color: #111816;
+  color: #e5e7e6;
+}
+
+html.dark header {
+  background-color: #111816;
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: #f5f7f6;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
 a {
   color: var(--srp-green);
 }
@@ -32,17 +68,18 @@ a:hover {
   color: var(--srp-green-light);
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--srp-charcoal);
+html.dark a {
+  color: #7fbd8c;
 }
 
-/* Buttons */
+html.dark a:hover {
+  color: #a2d4aa;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
 button,
 .btn {
   background-color: var(--srp-green);
@@ -56,8 +93,51 @@ button:hover,
   border-color: var(--srp-green-light);
 }
 
-/* Selection */
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
 ::selection {
   background-color: var(--srp-green);
   color: var(--srp-white);
+}
+/* =========================================================
+   HEADER SEARCH + APPEARANCE SWITCHER
+   ========================================================= */
+
+#search-button,
+#appearance-switcher {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#search-button:hover,
+#appearance-switcher:hover {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+/* =========================================================
+   HEADER ICONS — SEARCH + APPEARANCE
+   ========================================================= */
+
+#search-button,
+#appearance-switcher {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #1c2523 !important;
+}
+
+#search-button:hover,
+#appearance-switcher:hover {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* Dark mode */
+html.dark #search-button,
+html.dark #appearance-switcher {
+  color: #f5f7f6 !important;
 }
