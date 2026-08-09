@@ -11,23 +11,53 @@
 # ordered by weight from lowest to highest.
 
 #[[main]]
-#  name = "Blog"
-#  pageRef = "posts"
-#  weight = 10
+#name = "Home"
+#pageRef = "/"
+#weight = 10
+
+[[main]]
+name = "What We Do"
+pageRef = "what-we-do"
+weight = 20
+
+[[main]]
+name = "How It Works"
+pageRef = "how-it-works"
+weight = 30
+
+[[main]]
+name = "Why Renew"
+pageRef = "why-renew"
+weight = 40
+
+[[main]]
+name = "FAQ"
+pageRef = "faq"
+weight = 50
+
+[[main]]
+name = "Contact"
+pageRef = "contact"
+weight = 60
 
 #[[main]]
-#  name = "Parent"
+# name = "Home"
+# pageRef = "posts"
+# weight = 10
+
+#[[main]]
+# name = "What We Do"
+# weight = 20
+
+#[[main]]
+#  name = "Multy Family"
+#  parent = "What We Do"
+#  pageRef = "posts"
 #  weight = 20
 
 #[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
+#  name = "FAQ"
+#  parent = "What We Do"
 #  pageRef = "posts"
 #  weight = 20
 

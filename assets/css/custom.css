@@ -1,0 +1,63 @@
+/* =========================================================
+   SHINGLE RENEW PRO
+   Custom site styling
+   ========================================================= */
+
+:root {
+  --srp-charcoal: #1c2523;
+  --srp-green: #2f6b4f;
+  --srp-green-light: #5f9e6e;
+  --srp-cream: #f7f6f1;
+  --srp-white: #ffffff;
+  --srp-text: #202522;
+}
+
+/* Main page */
+body {
+  background-color: var(--srp-cream);
+  color: var(--srp-text);
+}
+
+/* Header */
+header {
+  background-color: var(--srp-white);
+}
+
+/* Links */
+a {
+  color: var(--srp-green);
+}
+
+a:hover {
+  color: var(--srp-green-light);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--srp-charcoal);
+}
+
+/* Buttons */
+button,
+.btn {
+  background-color: var(--srp-green);
+  border-color: var(--srp-green);
+  color: var(--srp-white);
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--srp-green-light);
+  border-color: var(--srp-green-light);
+}
+
+/* Selection */
+::selection {
+  background-color: var(--srp-green);
+  color: var(--srp-white);
+}
