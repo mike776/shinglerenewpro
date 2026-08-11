@@ -3,49 +3,77 @@
    Custom site styling
    ========================================================= */
 
+
+/* =========================================================
+   BRAND COLORS
+   Based on the APEX-1132 brochure palette
+   ========================================================= */
+
 :root {
-  --srp-green: #2f6b4f;
-  --srp-green-light: #5f9e6e;
-  --srp-cream: #f7f6f1;
+  --srp-green-dark: #072f14;
+  --srp-green: #3aa04b;
+
+  --srp-lime: #94d30e;
+  --srp-lime-light: #e7fdb3;
+  --srp-mint: #7de2aa;
+
+  --srp-black: #010100;
+
+  --srp-roof: #635736;
+  --srp-roof-dark: #363622;
+
   --srp-white: #ffffff;
-  --srp-charcoal: #1c2523;
-  --srp-text: #202522;
+  --srp-cream: #f7f8ed;
+
+  --srp-text: #072f14;
+  --srp-text-light: #e7fdb3;
 }
+
 
 /* =========================================================
    LIGHT MODE
+   Blowfish uses light mode as the default.
+   There is no html.light class.
    ========================================================= */
 
-html.light body {
+body {
   background-color: var(--srp-cream);
   color: var(--srp-text);
 }
 
-html.light header {
+header {
   background-color: var(--srp-white);
 }
 
-html.light h1,
-html.light h2,
-html.light h3,
-html.light h4,
-html.light h5,
-html.light h6 {
-  color: var(--srp-charcoal);
+
+/* Headings */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--srp-green-dark);
 }
+
 
 /* =========================================================
    DARK MODE
+   Blowfish adds the .dark class to <html>
    ========================================================= */
 
 html.dark body {
-  background-color: #111816;
-  color: #e5e7e6;
+  background-color: var(--srp-black);
+  color: #e7f5ea;
 }
 
 html.dark header {
-  background-color: #111816;
+  background-color: var(--srp-green-dark);
 }
+
+
+/* Dark mode headings */
 
 html.dark h1,
 html.dark h2,
@@ -53,28 +81,33 @@ html.dark h3,
 html.dark h4,
 html.dark h5,
 html.dark h6 {
-  color: #f5f7f6;
+  color: var(--srp-lime-light);
 }
+
 
 /* =========================================================
    LINKS
    ========================================================= */
 
 a {
-  color: var(--srp-green);
+  color: var(--srp-green-dark);
 }
 
 a:hover {
-  color: var(--srp-green-light);
+  color: var(--srp-green);
 }
 
+
+/* Dark mode links */
+
 html.dark a {
-  color: #7fbd8c;
+  color: var(--srp-mint);
 }
 
 html.dark a:hover {
-  color: #a2d4aa;
+  color: var(--srp-lime);
 }
+
 
 /* =========================================================
    BUTTONS
@@ -87,22 +120,32 @@ button,
   color: var(--srp-white);
 }
 
+
+/* Button hover */
+
 button:hover,
 .btn:hover {
-  background-color: var(--srp-green-light);
-  border-color: var(--srp-green-light);
+  background-color: var(--srp-lime);
+  border-color: var(--srp-lime);
+  color: var(--srp-green-dark);
 }
+
 
 /* =========================================================
    TEXT SELECTION
    ========================================================= */
 
 ::selection {
-  background-color: var(--srp-green);
-  color: var(--srp-white);
+  background-color: var(--srp-lime);
+  color: var(--srp-green-dark);
 }
+
+
 /* =========================================================
    HEADER SEARCH + APPEARANCE SWITCHER
+
+   These are Blowfish controls. We remove the normal button
+   background so they blend into the navigation bar.
    ========================================================= */
 
 #search-button,
@@ -110,34 +153,468 @@ button:hover,
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
+  color: var(--srp-green-dark) !important;
 }
+
+
+/* Header control hover */
 
 #search-button:hover,
 #appearance-switcher:hover {
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
-}
-/* =========================================================
-   HEADER ICONS — SEARCH + APPEARANCE
-   ========================================================= */
-
-#search-button,
-#appearance-switcher {
-  background-color: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  color: #1c2523 !important;
+  color: var(--srp-green) !important;
 }
 
-#search-button:hover,
-#appearance-switcher:hover {
-  background-color: transparent !important;
-  border: none !important;
-}
 
-/* Dark mode */
+/* Dark mode header icons */
+
 html.dark #search-button,
 html.dark #appearance-switcher {
-  color: #f5f7f6 !important;
+  color: var(--srp-lime-light) !important;
+}
+
+html.dark #search-button:hover,
+html.dark #appearance-switcher:hover {
+  color: var(--srp-lime) !important;
+}
+/* =========================================================
+   CUSTOM HOMEPAGE
+   ========================================================= */
+
+.srp-hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 1.5rem;
+  text-align: center;
+  overflow: hidden;
+
+  /* Placeholder until real roof photography is added */
+  background:
+    linear-gradient(
+      rgba(7, 47, 20, 0.76),
+      rgba(1, 1, 0, 0.72)
+    ),
+    linear-gradient(
+      135deg,
+      var(--srp-roof-dark),
+      var(--srp-green-dark)
+    );
+}
+
+.srp-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.srp-eyebrow,
+.srp-section-label {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--srp-lime);
+}
+
+.srp-hero h1 {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.98;
+  font-weight: 900;
+  color: var(--srp-white);
+}
+
+.srp-hero-text {
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: var(--srp-lime-light);
+}
+
+.srp-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.srp-btn {
+  display: inline-block;
+  padding: 0.95rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 800;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.srp-btn:hover {
+  transform: translateY(-2px);
+}
+
+.srp-btn-primary {
+  background-color: var(--srp-lime);
+  color: var(--srp-green-dark) !important;
+}
+
+.srp-btn-primary:hover {
+  background-color: var(--srp-lime-light);
+}
+
+.srp-btn-secondary {
+  border: 2px solid var(--srp-lime-light);
+  color: var(--srp-white) !important;
+}
+
+.srp-btn-secondary:hover {
+  background-color: var(--srp-lime-light);
+  color: var(--srp-green-dark) !important;
+}
+
+.srp-section-inner {
+  width: min(1120px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.srp-benefits {
+  padding: 5rem 0;
+  background-color: var(--srp-cream);
+}
+
+.srp-benefits h2,
+.srp-how h2,
+.srp-contact h2 {
+  margin-top: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.05;
+  color: var(--srp-green-dark);
+}
+
+.srp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.srp-card {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: var(--srp-lime-light);
+  color: var(--srp-green-dark);
+}
+
+.srp-card:nth-child(2) {
+  background-color: var(--srp-mint);
+}
+
+.srp-card:nth-child(3) {
+  background-color: var(--srp-white);
+  border: 2px solid var(--srp-lime);
+}
+
+.srp-card h3 {
+  margin-top: 0;
+  color: var(--srp-green-dark);
+}
+
+.srp-how {
+  padding: 5rem 0;
+  background-color: var(--srp-green-dark);
+}
+
+.srp-how h2 {
+  color: var(--srp-lime-light);
+}
+
+.srp-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.srp-step {
+  color: var(--srp-white);
+}
+
+.srp-step span {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--srp-lime);
+}
+
+.srp-step h3 {
+  color: var(--srp-white);
+}
+
+.srp-cta {
+  padding: 5rem 0;
+  text-align: center;
+  background-color: var(--srp-lime);
+}
+
+.srp-cta h2 {
+  max-width: 850px;
+  margin: 0 auto 2rem;
+  color: var(--srp-green-dark);
+}
+
+.srp-contact {
+  padding: 5rem 0;
+  background-color: var(--srp-white);
+}
+
+html.dark .srp-benefits,
+html.dark .srp-contact {
+  background-color: var(--srp-black);
+}
+
+html.dark .srp-benefits h2,
+html.dark .srp-contact h2 {
+  color: var(--srp-lime-light);
+}
+
+html.dark .srp-card {
+  background-color: var(--srp-green-dark);
+  color: var(--srp-white);
+}
+
+html.dark .srp-card h3 {
+  color: var(--srp-lime);
+}
+
+@media (max-width: 800px) {
+  .srp-card-grid,
+  .srp-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .srp-hero {
+    min-height: 60vh;
+    padding: 5rem 1.25rem;
+  }
+
+  .srp-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .srp-btn {
+    text-align: center;
+  }
+}
+/* =========================================================
+   FAQ PAGE
+   ========================================================= */
+
+.srp-page-hero {
+  padding: 5rem 1.5rem 4rem;
+  text-align: center;
+  background-color: var(--srp-green-dark);
+  color: var(--srp-white);
+}
+
+.srp-page-hero .srp-section-inner {
+  max-width: 900px;
+}
+
+.srp-page-hero .srp-section-label {
+  color: var(--srp-lime);
+}
+
+.srp-page-hero h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.05;
+  color: var(--srp-lime-light);
+}
+
+.srp-page-hero p {
+  max-width: 750px;
+  margin: 1.25rem auto 0;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--srp-white);
+}
+
+
+/* FAQ background */
+
+.srp-faq-section {
+  padding: 5rem 1.5rem;
+  background-color: var(--srp-cream);
+}
+
+.srp-faq-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/* Individual FAQ */
+
+.srp-faq-item {
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  border: 1px solid rgba(7, 47, 20, 0.18);
+  border-radius: 12px;
+
+  background-color: var(--srp-white);
+}
+
+
+/* Question button */
+
+.srp-faq-question {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  padding: 1.3rem 1.5rem;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background-color: var(--srp-white) !important;
+  color: var(--srp-green-dark) !important;
+
+  font-size: 1.08rem;
+  font-weight: 800;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.srp-faq-question:hover {
+  background-color: var(--srp-lime-light) !important;
+}
+
+
+/* Plus icon */
+
+.srp-faq-icon {
+  flex-shrink: 0;
+
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 400;
+
+  color: var(--srp-green);
+
+  transition: transform 0.25s ease;
+}
+
+
+/* =========================================================
+   CLOSED ANSWER
+   ========================================================= */
+
+.srp-faq-answer {
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.srp-faq-answer-inner {
+  padding: 0 1.5rem 1.5rem;
+
+  line-height: 1.75;
+  color: var(--srp-text);
+}
+
+
+/* =========================================================
+   OPEN ANSWER
+   ========================================================= */
+
+.srp-faq-item.open .srp-faq-answer {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.srp-faq-item.open .srp-faq-question {
+  background-color: var(--srp-lime-light) !important;
+}
+
+.srp-faq-item.open .srp-faq-icon {
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   FAQ DARK MODE
+   ========================================================= */
+
+html.dark .srp-faq-section {
+  background-color: var(--srp-black);
+}
+
+html.dark .srp-faq-item {
+  background-color: var(--srp-green-dark);
+  border-color: rgba(231, 253, 179, 0.18);
+}
+
+html.dark .srp-faq-question {
+  background-color: var(--srp-green-dark) !important;
+  color: var(--srp-lime-light) !important;
+}
+
+html.dark .srp-faq-question:hover,
+html.dark .srp-faq-item.open .srp-faq-question {
+  background-color: #0d4a22 !important;
+}
+
+html.dark .srp-faq-answer-inner {
+  color: var(--srp-white);
+}
+
+html.dark .srp-faq-icon {
+  color: var(--srp-lime);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .srp-page-hero {
+    padding: 4rem 1.25rem 3rem;
+  }
+
+  .srp-faq-section {
+    padding: 3rem 1rem;
+  }
+
+  .srp-faq-question {
+    padding: 1.1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .srp-faq-answer-inner {
+    padding: 0 1.2rem 1.3rem;
+  }
 }
