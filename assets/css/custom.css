@@ -618,3 +618,34 @@ html.dark .srp-faq-icon {
     padding: 0 1.2rem 1.3rem;
   }
 }
+/* =========================================================
+   MOBILE HEADER ICONS
+   Search + appearance switcher
+   ========================================================= */
+
+#search-button-mobile,
+#appearance-switcher-mobile {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--srp-green-dark) !important;
+}
+
+#search-button-mobile:hover,
+#appearance-switcher-mobile:hover {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--srp-green) !important;
+}
+
+/* Dark mode */
+html.dark #search-button-mobile,
+html.dark #appearance-switcher-mobile {
+  color: var(--srp-lime-light) !important;
+}
+
+html.dark #search-button-mobile:hover,
+html.dark #appearance-switcher-mobile:hover {
+  color: var(--srp-lime) !important;
+}
