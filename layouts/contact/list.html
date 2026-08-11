@@ -1,0 +1,190 @@
+{{ define "main" }}
+
+<section class="srp-contact-hero">
+  <div class="srp-section-inner">
+
+    <p class="srp-section-label">Let’s Talk About Your Roof</p>
+
+    <h1>Contact Shingle Renew Pro</h1>
+
+    <p class="srp-contact-intro">
+      Have questions about roof rejuvenation or want to find out whether
+      your asphalt shingle roof may be a good candidate?
+      Start with a free roof assessment.
+    </p>
+
+  </div>
+</section>
+
+
+<section class="srp-contact-main">
+  <div class="srp-section-inner srp-contact-grid">
+
+    <div class="srp-contact-info">
+
+      <p class="srp-section-label">Get In Touch</p>
+
+      <h2>Request a Free Roof Assessment</h2>
+
+      <p>
+        Tell us a little about your roof and property.
+        We’ll review the information and contact you to discuss the next step.
+      </p>
+
+      <div class="srp-contact-details">
+
+        <div class="srp-contact-detail">
+          <h3>Service Area</h3>
+          <p>
+            Serving homeowners and property owners throughout
+            Northeast Florida.
+          </p>
+        </div>
+
+        <div class="srp-contact-detail">
+          <h3>Email</h3>
+          <p>
+            <a href="mailto:info@shinglerenewpro.com">
+              info@shinglerenewpro.com
+            </a>
+          </p>
+        </div>
+
+        <div class="srp-contact-detail">
+          <h3>Phone</h3>
+          <p>
+            <a href="tel:+12037946453">
+              (203) 794-6453
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="srp-contact-form-wrap">
+
+      <form
+        class="srp-contact-form"
+        action="https://formspree.io/f/mzeprkey"
+        method="POST"
+      >
+
+        <div class="srp-form-row">
+
+          <div class="srp-form-field">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+            >
+          </div>
+
+          <div class="srp-form-field">
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div class="srp-form-field">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+          >
+        </div>
+
+
+        <div class="srp-form-field">
+          <label for="address">Property Address</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+          >
+        </div>
+
+
+        <div class="srp-form-row">
+
+          <div class="srp-form-field">
+            <label for="roof-age">Approximate Roof Age</label>
+            <select id="roof-age" name="roof-age">
+              <option value="">Select</option>
+              <option>Under 5 years</option>
+              <option>5–10 years</option>
+              <option>10–15 years</option>
+              <option>15–20 years</option>
+              <option>20+ years</option>
+              <option>Not sure</option>
+            </select>
+          </div>
+
+          <div class="srp-form-field">
+            <label for="property-type">Property Type</label>
+            <select id="property-type" name="property-type">
+              <option value="">Select</option>
+              <option>Single-family home</option>
+              <option>Townhome</option>
+              <option>Multi-family property</option>
+              <option>Commercial property</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+        </div>
+
+
+        <div class="srp-form-field">
+          <label for="message">Tell Us About Your Roof</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Roof age, granule loss, staining, cracking, leaks, or anything else you've noticed."
+          ></textarea>
+        </div>
+
+
+        <button type="submit" class="srp-contact-submit">
+          Request My Free Roof Assessment
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="srp-contact-bottom">
+  <div class="srp-section-inner">
+
+    <p class="srp-section-label">Not Sure If Your Roof Qualifies?</p>
+
+    <h2>That’s What the Assessment Is For.</h2>
+
+    <p>
+      We don’t recommend rejuvenation for every roof.
+      We first determine whether preservation appears to make sense
+      for the condition of your existing asphalt shingles.
+    </p>
+
+  </div>
+</section>
+
+{{ end }}
