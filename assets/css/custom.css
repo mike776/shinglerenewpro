@@ -1745,3 +1745,38 @@ html.dark .srp-form-field textarea {
     padding: 1.25rem;
   }
 }
+/* =========================================================
+   DARK MODE FIX — WHAT WE DO / WHY REJUVENATE
+   ========================================================= */
+
+html.dark .srp-what-benefits {
+  background-color: var(--srp-lime-light);
+  color: var(--srp-green-dark);
+}
+
+html.dark .srp-what-benefits h2,
+html.dark .srp-what-benefits h3,
+html.dark .srp-what-benefits p {
+  color: var(--srp-green-dark) !important;
+}
+/* =========================================================
+   DARK MODE FIX — WHY RENEW COMPARISON
+   ========================================================= */
+
+html.dark .srp-renew-compare {
+  background-color: var(--srp-black);
+}
+
+html.dark .srp-compare-card:not(.srp-compare-renew) {
+  background-color: var(--srp-white);
+  color: var(--srp-green-dark);
+}
+
+html.dark .srp-compare-card:not(.srp-compare-renew) h3,
+html.dark .srp-compare-card:not(.srp-compare-renew) p {
+  color: var(--srp-green-dark) !important;
+}
+
+html.dark .srp-compare-vs {
+  color: var(--srp-lime);
+}
