@@ -31,6 +31,11 @@ pageRef = "why-renew"
 weight = 40
 
 [[main]]
+name = "About Us"
+pageRef = "about"
+weight = 45
+
+[[main]]
 name = "FAQ"
 pageRef = "faq"
 weight = 50
@@ -44,6 +49,16 @@ weight = 60
 # name = "Home"
 # pageRef = "posts"
 # weight = 10
+
+[[footer]]
+name = "Privacy Policy"
+pageRef = "privacy"
+weight = 10
+
+[[footer]]
+name = "Terms & Conditions"
+pageRef = "terms-and-conditions"
+weight = 20
 
 #[[main]]
 # name = "What We Do"
