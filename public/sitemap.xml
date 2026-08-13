@@ -114,6 +114,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/how-it-works/</loc>
+    <lastmod>2026-08-12T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/privacy/</loc>
     <lastmod>2026-08-12T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -139,11 +145,6 @@
   </url>
   <url>
     <loc>http://localhost:1313/contact/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://localhost:1313/how-it-works/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

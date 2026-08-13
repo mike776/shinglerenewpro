@@ -3,7 +3,7 @@ title: "How do I get started?"
 weight: 210
 ---
 
-Start with a roof assessment.
+<a href="/contact/">Start with a roof assessment.</a>
 
 We will evaluate the condition of your asphalt shingle roof and determine whether rejuvenation appears to be an appropriate option.
 
