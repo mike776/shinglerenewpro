@@ -1615,7 +1615,7 @@ html.dark .srp-renew-aging {
   color: var(--srp-green-dark);
 }
 
-.srp-form-field input,
+.srp-form-field input:not([type="checkbox"]),
 .srp-form-field select,
 .srp-form-field textarea {
   width: 100%;
@@ -2236,4 +2236,48 @@ html.dark .srp-terms-highlight {
   .srp-terms-contact {
     padding: 3.5rem 1.25rem;
   }
+}
+/* =========================================================
+   CONTACT — SMS CONSENT
+   ========================================================= */
+
+.srp-sms-consent {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.srp-sms-consent input[type="checkbox"] {
+  position: absolute !important;
+  left: 0 !important;
+  top: 3px !important;
+
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.srp-sms-consent label {
+  display: block !important;
+
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+
+  margin: 0 !important;
+  padding: 0 0 0 27px !important;
+
+  font-size: 0.78rem !important;
+  line-height: 1.45 !important;
+  font-weight: 400 !important;
+
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
 }
