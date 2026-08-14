@@ -2281,3 +2281,39 @@ html.dark .srp-terms-highlight {
   word-break: normal !important;
   overflow-wrap: normal !important;
 }
+.srp-required {
+  color: #d00000 !important;
+  font-weight: 700;
+}
+.srp-privacy-content ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem;
+}
+
+.srp-privacy-content li {
+  display: list-item !important;
+  margin-bottom: 0.5rem;
+}
+.srp-terms-highlight {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--srp-green-dark);
+  color: var(--srp-white);
+}
+/* =========================================================
+   TERMS — BULLET LISTS
+   ========================================================= */
+
+.srp-terms-content ul {
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  padding-left: 1.75rem !important;
+  margin: 1rem 0 1.5rem !important;
+}
+
+.srp-terms-content ul li {
+  display: list-item !important;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
