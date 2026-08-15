@@ -1,121 +1,563 @@
-<section class="srp-hero">
-  <div class="srp-hero-overlay"></div>
+{{/*
+  Homepage — adopted from the redesign reference.
 
-  <div class="srp-hero-content">
+  Section order: hero (+ before/after slider) → why renew → how it
+  works → renew vs. replace → FAQ → assessment form.
 
-  	<img
-      src="/img/shingle-renew-pro.png"
-      alt="Shingle Renew Pro"
-      class="srp-home-logo"
-    >
+  The reference's stats bar and testimonials block are intentionally
+  absent: both carried invented figures and named reviews. Add them
+  back only with verified numbers and real customer quotes.
+*/}}
 
-    <p class="srp-eyebrow">Professional Roof Rejuvenation</p>
+<section class="srp-hero" id="top">
+  <div class="srp-section-inner">
+    <div>
+      <p class="srp-eyebrow">Professional Roof Rejuvenation</p>
 
-    <h1>Don’t Replace Your Roof. Renew It.</h1>
+      <h1>Don&rsquo;t replace your roof. <em>Renew it.</em></h1>
 
-    <p class="srp-hero-text">
-      Help extend the useful life of aging asphalt shingles with professional
-      roof rejuvenation.
-    </p>
+      <p class="srp-hero-text">
+        Aging asphalt shingles lose flexibility long before the roof
+        reaches the end of its life. A rejuvenation treatment is
+        designed to help preserve a roof that still has useful service
+        life remaining.
+      </p>
 
-    <div class="srp-hero-actions">
-      <a href="contact" class="srp-btn srp-btn-primary">
-        Get Your Free Roof Assessment
-      </a>
+      <div class="srp-hero-actions">
+        <a class="srp-btn srp-btn-primary" href="/contact">
+          Get Your Free Roof Assessment
+        </a>
 
-      <a href="how-it-works" class="srp-btn srp-btn-secondary">
-        Learn How It Works
-      </a>
+        <a class="srp-btn srp-btn-hero-ghost" href="#how">
+          See How It Works
+        </a>
+      </div>
+
+      <p class="srp-hero-note">
+        Free, no-obligation evaluation &middot; If your roof isn&rsquo;t a
+        candidate, we&rsquo;ll tell you
+      </p>
+
+      <div class="srp-trust-chips" aria-label="Trust highlights">
+        <span class="srp-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg>
+          Asphalt shingle specialists
+        </span>
+
+        <span class="srp-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.6-7-10a7 7 0 0114 0c0 5.4-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          Serving Northeast Florida
+        </span>
+
+        <span class="srp-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Honest recommendation, every time
+        </span>
+      </div>
+    </div>
+
+    <div class="srp-ba-card srp-reveal">
+      <div class="srp-ba" id="baSlider" style="--split: 50%">
+        <div class="srp-ba-layer" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="shBefore" width="100" height="60" patternUnits="userSpaceOnUse">
+                <rect width="100" height="60" fill="#8d8471"/>
+                <rect y="0" width="100" height="30" fill="#968c76"/>
+                <rect x="0" y="26" width="48" height="4" fill="#6f6857"/>
+                <rect x="52" y="26" width="48" height="4" fill="#6f6857"/>
+                <rect x="48" y="0" width="4" height="30" fill="#7a725f"/>
+                <rect y="30" width="100" height="30" fill="#8d8471"/>
+                <rect x="-27" y="56" width="48" height="4" fill="#6f6857"/>
+                <rect x="25" y="56" width="48" height="4" fill="#6f6857"/>
+                <rect x="77" y="56" width="27" height="4" fill="#6f6857"/>
+                <rect x="21" y="30" width="4" height="30" fill="#7a725f"/>
+                <rect x="73" y="30" width="4" height="30" fill="#7a725f"/>
+                <rect x="12" y="8" width="14" height="3" rx="1.5" fill="#c9c2ad"/>
+                <rect x="64" y="40" width="18" height="3" rx="1.5" fill="#c9c2ad"/>
+                <rect x="38" y="14" width="3" height="10" rx="1.5" fill="#5c5546"/>
+              </pattern>
+              <filter id="grainB"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.18 0.18 0.18 0 0" result="a"/><feComposite in="a" in2="SourceGraphic" operator="over"/></filter>
+              <pattern id="shAfter" width="100" height="60" patternUnits="userSpaceOnUse">
+                <rect width="100" height="60" fill="#4a4433"/>
+                <rect y="0" width="100" height="30" fill="#514a37"/>
+                <rect x="0" y="26" width="48" height="4" fill="#332f22"/>
+                <rect x="52" y="26" width="48" height="4" fill="#332f22"/>
+                <rect x="48" y="0" width="4" height="30" fill="#3b3628"/>
+                <rect y="30" width="100" height="30" fill="#4a4433"/>
+                <rect x="-27" y="56" width="48" height="4" fill="#332f22"/>
+                <rect x="25" y="56" width="48" height="4" fill="#332f22"/>
+                <rect x="77" y="56" width="27" height="4" fill="#332f22"/>
+                <rect x="21" y="30" width="4" height="30" fill="#3b3628"/>
+                <rect x="73" y="30" width="4" height="30" fill="#3b3628"/>
+                <rect x="10" y="4" width="80" height="2" rx="1" fill="#5e5741" opacity=".7"/>
+                <rect x="10" y="34" width="80" height="2" rx="1" fill="#5e5741" opacity=".7"/>
+              </pattern>
+              <filter id="grainA"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0.1 0.1 0.1 0 0" result="a"/><feComposite in="a" in2="SourceGraphic" operator="over"/></filter>
+              <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".14"/>
+                <stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g filter="url(#grainB)"><rect width="400" height="300" fill="url(#shBefore)"/></g>
+          </svg>
+        </div>
+
+        <div class="srp-ba-layer srp-ba-after" aria-hidden="true">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g filter="url(#grainA)"><rect width="400" height="300" fill="url(#shAfter)"/></g>
+            <rect width="400" height="300" fill="url(#sheen)"/>
+          </svg>
+        </div>
+
+        <span class="srp-ba-tag srp-before">BEFORE</span>
+        <span class="srp-ba-tag srp-after">AFTER</span>
+        <div class="srp-ba-divider"></div>
+
+        <div class="srp-ba-handle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+        </div>
+
+        <input
+          class="srp-ba-range"
+          id="baRange"
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          aria-label="Compare shingles before and after rejuvenation"
+        >
+      </div>
+
+      <p class="srp-ba-caption">
+        Drag to compare &mdash; dried-out shingles vs. rejuvenated.
+        Illustration; we&rsquo;ll show you real photos of your own roof.
+      </p>
     </div>
   </div>
 </section>
 
 
-<section class="srp-benefits">
+<section class="srp-benefits srp-section" id="why">
   <div class="srp-section-inner">
-    <p class="srp-section-label">A Smarter Alternative</p>
-    <h2>Your Roof May Have Years Left</h2>
+    <div class="srp-section-head srp-reveal">
+      <p class="srp-section-label">A Smarter Alternative</p>
+      <h2>Your roof may have years of life left</h2>
+      <p>
+        Many asphalt roofs are replaced earlier than they need to be. If
+        your shingles are aging but still intact, rejuvenation is designed
+        to preserve what you already have.
+      </p>
+    </div>
 
     <div class="srp-card-grid">
-      <article class="srp-card">
+      <article class="srp-card srp-reveal">
+        <div class="srp-icon-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 9.5V21h14V9.5"/></svg>
+        </div>
         <h3>Preserve</h3>
         <p>
-          Preserve the roof you already have instead of replacing it prematurely.
+          Preserve the roof you already have instead of replacing it
+          prematurely.
         </p>
       </article>
 
-      <article class="srp-card">
+      <article class="srp-card srp-reveal">
+        <div class="srp-icon-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.5"/></svg>
+        </div>
         <h3>Restore</h3>
         <p>
-          Help restore flexibility to aging asphalt shingles as they lose oils
-          over time.
+          As shingles age the asphalt can become dry and less flexible.
+          Treatment is designed to help restore properties lost to
+          weathering.
         </p>
       </article>
 
-      <article class="srp-card">
+      <article class="srp-card srp-reveal">
+        <div class="srp-icon-tile">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/></svg>
+        </div>
         <h3>Protect</h3>
         <p>
-          Help reduce further aging and protect your roof investment.
+          Help slow further aging and protect one of the largest
+          investments in your home.
         </p>
+      </article>
+    </div>
+
+    <div class="srp-signs-block srp-reveal">
+      <p class="srp-section-label">Is your roof a candidate?</p>
+
+      <div class="srp-signs">
+        <div class="srp-sign">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><b>Granules in gutters</b> after rain or wind</span>
+        </div>
+
+        <div class="srp-sign">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><b>Shingles look faded</b> or feel dry and brittle</span>
+        </div>
+
+        <div class="srp-sign">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><b>Minor cracking</b> and loss of flexibility</span>
+        </div>
+
+        <div class="srp-sign">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          <span><b>No active leaks</b> or widespread damage</span>
+        </div>
+      </div>
+
+      <p class="srp-note">
+        Age alone does not determine whether a roof qualifies. The overall
+        condition of the shingles, flashing, decking, and roof system
+        should be evaluated first &mdash; which is exactly what the free
+        assessment is for.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="srp-how srp-section" id="how">
+  <div class="srp-section-inner">
+    <div class="srp-section-head srp-reveal">
+      <p class="srp-section-label">Simple Process</p>
+      <h2>How it works</h2>
+      <p>
+        No tear-off and no dumpster in the driveway. Here&rsquo;s what to
+        expect from start to finish.
+      </p>
+    </div>
+
+    <div class="srp-card-grid">
+      <article class="srp-card srp-step-card srp-reveal">
+        <span class="srp-step-num">STEP 1</span>
+        <h3>Inspect</h3>
+        <p>
+          We evaluate the age and condition of your asphalt shingle roof
+          and tell you honestly whether rejuvenation is appropriate.
+        </p>
+        <span class="srp-day">Free &middot; No obligation</span>
+      </article>
+
+      <article class="srp-card srp-step-card srp-reveal">
+        <span class="srp-step-num">STEP 2</span>
+        <h3>Prepare</h3>
+        <p>
+          The roof and the surrounding property are prepared for
+          application, including gutters, siding, and landscaping.
+        </p>
+        <span class="srp-day">Treatment day</span>
+      </article>
+
+      <article class="srp-card srp-step-card srp-reveal">
+        <span class="srp-step-num">STEP 3</span>
+        <h3>Rejuvenate</h3>
+        <p>
+          The treatment is applied evenly across the shingle surface,
+          followed by a final walkthrough and cleanup.
+        </p>
+        <span class="srp-day">Timing varies by roof</span>
       </article>
     </div>
   </div>
 </section>
 
 
-<section id="how-it-works" class="srp-how">
+<section class="srp-vs srp-section" id="compare">
   <div class="srp-section-inner">
-    <p class="srp-section-label">Simple Process</p>
-    <h2>How It Works</h2>
+    <div class="srp-section-head srp-reveal">
+      <p class="srp-section-label">The Honest Comparison</p>
+      <h2>Rejuvenation vs. full replacement</h2>
+      <p>
+        Replacement is sometimes the right call &mdash; and when it is,
+        we&rsquo;ll say so. But when it isn&rsquo;t, the difference matters.
+      </p>
+    </div>
 
-    <div class="srp-steps">
-      <div class="srp-step">
-        <span>01</span>
-        <h3>Inspect</h3>
-        <p>
-          We evaluate the age and condition of your asphalt shingle roof.
-        </p>
-      </div>
+    <div class="srp-vs-scroll srp-reveal">
+      <table class="srp-vs-table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="srp-vs-col">Roof rejuvenation</th>
+            <th scope="col">Full replacement</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Typical cost</th>
+            <td class="srp-vs-col">Substantially less than a tear-off</td>
+            <td>A major capital expense</td>
+          </tr>
+          <tr>
+            <th scope="row">Time on site</th>
+            <td class="srp-vs-col">Varies by roof, but far shorter</td>
+            <td>Days of crew, noise, and debris</td>
+          </tr>
+          <tr>
+            <th scope="row">Disruption</th>
+            <td class="srp-vs-col">Minimal &mdash; no tear-off, no dumpster</td>
+            <td>Tear-off, nail cleanup, landscaping risk</td>
+          </tr>
+          <tr>
+            <th scope="row">Waste</th>
+            <td class="srp-vs-col">Existing shingles stay on the roof</td>
+            <td>Old shingles go to the landfill</td>
+          </tr>
+          <tr>
+            <th scope="row">Best for</th>
+            <td class="srp-vs-col">Aging but structurally intact shingles</td>
+            <td>Leaking, damaged, or end-of-life roofs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      <div class="srp-step">
-        <span>02</span>
-        <h3>Prepare</h3>
-        <p>
-          The roof and surrounding areas are prepared for professional application.
-        </p>
-      </div>
+    <p class="srp-note srp-reveal">
+      Actual cost depends on roof size, pitch, accessibility, condition,
+      preparation requirements, and any repairs needed. We provide pricing
+      after evaluating the roof.
+    </p>
+  </div>
+</section>
 
-      <div class="srp-step">
-        <span>03</span>
-        <h3>Rejuvenate</h3>
-        <p>
-          The rejuvenation treatment is applied evenly across the shingles.
-        </p>
+
+<section class="srp-faq-home srp-section" id="faq">
+  <div class="srp-section-inner">
+    <div class="srp-section-head srp-reveal">
+      <p class="srp-section-label">Straight Answers</p>
+      <h2>Questions homeowners actually ask</h2>
+    </div>
+
+    <div class="srp-faq srp-reveal">
+      <details open>
+        <summary>What is roof rejuvenation?</summary>
+        <div>
+          <p>
+            Roof rejuvenation is a preservation treatment for aging asphalt
+            shingles.
+          </p>
+          <p>
+            As shingles age, the asphalt components can become dry and less
+            flexible. A rejuvenation treatment is designed to penetrate the
+            shingles and help restore properties that are lost through aging
+            and weather exposure.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do I know if my roof may be a good candidate?</summary>
+        <div>
+          <p>
+            Common signs of an aging asphalt shingle roof include granules
+            collecting in gutters, shingles becoming dry or brittle, fading,
+            weathering, minor cracking, and loss of flexibility.
+          </p>
+          <p>
+            Age alone does not determine whether a roof qualifies. The overall
+            condition of the shingles, roof system, flashing, decking, and
+            other components should be considered before treatment.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What happens if my roof does not qualify?</summary>
+        <div>
+          <p>We will tell you. Roof rejuvenation is not appropriate for every roof.</p>
+          <p>
+            If we find that the roof is too deteriorated, has significant
+            damage, or needs repairs or replacement instead, we will explain
+            what we found rather than recommending a treatment that is not
+            appropriate for the roof.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How much longer can it extend the life of my roof?</summary>
+        <div>
+          <p>
+            The manufacturer of our product states that the treatment can add
+            approximately six years of roof life. This should not be
+            interpreted as a guarantee that every treated roof will last
+            exactly six additional years.
+          </p>
+          <p>
+            Remaining roof life depends on many factors, including the
+            roof&rsquo;s current condition, installation quality, weather
+            exposure, ventilation, previous damage, and maintenance.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is rejuvenation less expensive than replacement?</summary>
+        <div>
+          <p>
+            For a roof that still qualifies for treatment, rejuvenation can be
+            substantially less expensive than tearing off and replacing the
+            entire roof.
+          </p>
+          <p>
+            The actual cost depends on factors such as roof size, pitch,
+            accessibility, condition, preparation requirements, and repairs
+            that may be needed. We provide pricing after evaluating the roof.
+          </p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How long does the process take?</summary>
+        <div>
+          <p>
+            The amount of time required depends on the size, pitch,
+            accessibility, cleanliness, and condition of the roof.
+          </p>
+          <p>
+            Preparation and treatment requirements can vary from one property
+            to another, so we evaluate the roof before providing a project
+            schedule.
+          </p>
+        </div>
+      </details>
+    </div>
+
+    <p class="srp-faq-more srp-reveal">
+      <a href="/faq">Read all frequently asked questions &rarr;</a>
+    </p>
+  </div>
+</section>
+
+
+<section class="srp-assess srp-section" id="assessment">
+  <div class="srp-section-inner">
+    <div class="srp-reveal">
+      <p class="srp-section-label">Get Started</p>
+
+      <h2>Free roof assessment</h2>
+
+      <p class="srp-assess-pitch">
+        Before you commit to a replacement, find out whether your roof can
+        be renewed instead.
+      </p>
+
+      <div class="srp-next-steps">
+        <div class="srp-next-step">
+          <span class="srp-n">1</span>
+          <div>
+            <b>We review your information and get in touch</b>
+            <span>A short conversation about your roof &mdash; no sales script.</span>
+          </div>
+        </div>
+
+        <div class="srp-next-step">
+          <span class="srp-n">2</span>
+          <div>
+            <b>We evaluate the roof</b>
+            <span>We assess the condition of the shingles and the wider roof system.</span>
+          </div>
+        </div>
+
+        <div class="srp-next-step">
+          <span class="srp-n">3</span>
+          <div>
+            <b>You get an honest recommendation</b>
+            <span>Renew, repair, or replace &mdash; with pricing if treatment makes sense.</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
+    <div class="srp-form-card srp-reveal">
+      <form action="https://formspree.io/f/xjybogjb" method="POST">
+        <div class="srp-form-grid">
+          <div class="srp-field">
+            <label for="home-name">Name</label>
+            <input id="home-name" name="name" type="text" autocomplete="name" required>
+          </div>
 
-<section class="srp-cta">
-  <div class="srp-section-inner">
-    <h2>Before You Replace Your Roof, Find Out If It Can Be Renewed.</h2>
+          <div class="srp-field">
+            <label for="home-phone">Phone</label>
+            <input id="home-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
 
-    <a href="contact" class="srp-btn srp-btn-primary">
-      Request a Free Assessment
-    </a>
-  </div>
-</section>
+          <div class="srp-field srp-full">
+            <label for="home-email">Email</label>
+            <input id="home-email" name="email" type="email" autocomplete="email" required>
+          </div>
 
+          <div class="srp-field srp-full">
+            <label for="home-address">Property Address</label>
+            <input id="home-address" name="address" type="text" autocomplete="street-address">
+          </div>
 
-<section id="contact" class="srp-contact">
-  <div class="srp-section-inner">
-    <p class="srp-section-label">Get Started</p>
-    <h2>Free Roof Assessment</h2>
+          <div class="srp-field">
+            <label for="home-roof-age">Approximate Roof Age</label>
+            <select id="home-roof-age" name="roof-age">
+              <option value="">Select</option>
+              <option>Under 5 years</option>
+              <option>5&ndash;10 years</option>
+              <option>10&ndash;15 years</option>
+              <option>15&ndash;20 years</option>
+              <option>20+ years</option>
+              <option>Not sure</option>
+            </select>
+          </div>
 
-    <p>
-      Tell us about your roof and we’ll help determine whether roof rejuvenation
-      may be a good option.
-    </p>
+          <div class="srp-field">
+            <label for="home-notes">Anything else? <span class="srp-opt">(optional)</span></label>
+            <input id="home-notes" name="notes" type="text" placeholder="e.g., granules in gutters">
+          </div>
+        </div>
+
+        <div class="srp-sms-consent" data-consent-block>
+          <input
+            type="checkbox"
+            id="home-sms-consent"
+            name="sms-consent"
+            value="Yes"
+            required
+            aria-describedby="home-sms-consent-error"
+          >
+
+          <div class="srp-consent-body">
+            <label for="home-sms-consent">
+              <span class="srp-consent-head">
+                <span class="srp-consent-chip">Required</span>
+                <span class="srp-consent-title">Text message consent</span>
+              </span>
+
+              <span class="srp-consent-text">
+                By checking this box, you agree to receive TEXT messages from
+                Shingle Renew Pro related to appointments or specials at the phone
+                number provided above. You may reply STOP to opt-out at any time.
+                For assistance, reply HELP. Messages and data rates may apply.
+                Message frequency will vary. Please review our
+                <a href="/privacy">privacy policy</a> and
+                <a href="/terms-and-conditions">terms of service.</a>
+              </span>
+            </label>
+
+            <p class="srp-consent-error" id="home-sms-consent-error" role="alert" hidden>
+              <span aria-hidden="true">&#10005;</span>
+              Please agree to receive text messages before submitting.
+            </p>
+          </div>
+        </div>
+
+        <button type="submit">Request My Free Roof Assessment</button>
+
+        <p class="srp-form-fine">
+          We only use your information to schedule your assessment.
+        </p>
+      </form>
+    </div>
   </div>
 </section>

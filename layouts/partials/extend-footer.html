@@ -1,0 +1,97 @@
+{{/*
+  Homepage behaviour from the redesign reference: the before/after
+  slider and the scroll-reveal effect.
+
+  The reference's sticky-header script is omitted (Blowfish already
+  fixes the header) as is its demo form handler, since the assessment
+  form posts to Formspree for real.
+
+  Both blocks no-op on pages that lack the elements.
+*/}}
+
+<script>
+  (function () {
+    // Keep the flow spacer exactly as tall as the fixed header stack.
+    // The stack's height changes with viewport width (the topbar wraps,
+    // the nav collapses), so a fixed CSS value either overlaps the page
+    // or leaves a gap. custom.css still carries sensible defaults for
+    // the pre-script paint.
+    var stack = document.querySelector(".fixed.inset-x-0");
+    var spacer = document.querySelector(".srp-header-spacer");
+
+    if (stack && spacer) {
+      var syncSpacer = function () {
+        spacer.style.minHeight = stack.getBoundingClientRect().height + "px";
+      };
+
+      syncSpacer();
+      addEventListener("resize", syncSpacer, { passive: true });
+      addEventListener("load", syncSpacer);
+
+      if ("ResizeObserver" in window) {
+        new ResizeObserver(syncSpacer).observe(stack);
+      }
+    }
+
+    // SMS consent validation. The checkbox keeps its `required`
+    // attribute, so the browser still blocks the submit; this only
+    // replaces the native bubble — which is unstyled and vanishes on
+    // the next click — with a persistent inline message. Every other
+    // field keeps native validation untouched.
+    document.querySelectorAll("[data-consent-block]").forEach(function (block) {
+      var box = block.querySelector('input[type="checkbox"]');
+      var error = block.querySelector(".srp-consent-error");
+
+      if (!box || !error) return;
+
+      box.addEventListener("invalid", function (e) {
+        // Suppress the native bubble so the styled message is the
+        // only thing reporting this failure.
+        e.preventDefault();
+        block.classList.add("srp-invalid");
+        error.hidden = false;
+      });
+
+      box.addEventListener("change", function () {
+        if (!box.checked) return;
+        block.classList.remove("srp-invalid");
+        error.hidden = true;
+      });
+    });
+
+    // Before/after slider. The range input is the control; the CSS
+    // clips the "after" layer to whatever --split it reports.
+    var slider = document.getElementById("baSlider");
+    var range = document.getElementById("baRange");
+
+    if (slider && range) {
+      range.addEventListener("input", function () {
+        slider.style.setProperty("--split", range.value + "%");
+      });
+    }
+
+    // Scroll reveal. Reduced motion is handled in CSS, which makes
+    // .srp-reveal visible with no transition, so observing is
+    // harmless either way.
+    var revealables = document.querySelectorAll(".srp-reveal");
+
+    if (revealables.length && "IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("srp-in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealables.forEach(function (el) {
+        io.observe(el);
+      });
+    } else {
+      revealables.forEach(function (el) {
+        el.classList.add("srp-in");
+      });
+    }
+  })();
+</script>

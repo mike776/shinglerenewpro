@@ -174,7 +174,7 @@
           ></textarea>
         </div>
 
-        <div class="srp-sms-consent">
+        <div class="srp-sms-consent" data-consent-block>
 
           <input
             type="checkbox"
@@ -182,11 +182,28 @@
             name="sms-consent"
             value="Yes"
             required
+            aria-describedby="sms-consent-error"
           >
 
-        <label for="sms-consent">
-          By checking this box, you agree to receive TEXT messages from Shingle Renew Pro related to appointments or specials at the phone number provided above. You may reply STOP to opt-out at any time. For assistance, reply HELP. Messages and data rates may apply. Message frequency will vary. please review our <a href="/privacy"> privacy  policy </a> and <a href="/terms-and-conditions">terms of service.</a> <span class="srp-required">* REQUIRED</span>
-        </label>
+          <div class="srp-consent-body">
+
+            <label for="sms-consent">
+              <span class="srp-consent-head">
+                <span class="srp-consent-chip">Required</span>
+                <span class="srp-consent-title">Text message consent</span>
+              </span>
+
+              <span class="srp-consent-text">
+                By checking this box, you agree to receive TEXT messages from Shingle Renew Pro related to appointments or specials at the phone number provided above. You may reply STOP to opt-out at any time. For assistance, reply HELP. Messages and data rates may apply. Message frequency will vary. please review our <a href="/privacy">privacy policy</a> and <a href="/terms-and-conditions">terms of service.</a>
+              </span>
+            </label>
+
+            <p class="srp-consent-error" id="sms-consent-error" role="alert" hidden>
+              <span aria-hidden="true">&#10005;</span>
+              Please agree to receive text messages before submitting.
+            </p>
+
+          </div>
 
         </div>
 

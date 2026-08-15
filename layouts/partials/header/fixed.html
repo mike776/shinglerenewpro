@@ -1,0 +1,47 @@
+{{/*
+  Fixed header — overrides the Blowfish partial of the same name to
+  add the design's topbar strip above the main navigation.
+
+  The topbar lives inside the fixed stack rather than in normal flow,
+  because the header is position:fixed and would otherwise cover it.
+
+  Two things differ from the theme original on purpose:
+    • The flow spacer uses a plain class sized in custom.css. The
+      theme's `min-h-[148px]` is a Tailwind arbitrary value that is
+      not present in the compiled CSS bundle, so it collapses to zero
+      and lets the header overlap the page.
+    • The nav row is wrapped in a full-width bar that carries the
+      surface background, since header/basic.html emits a bare <div>
+      with no element to hang a background on.
+*/}}
+
+<div class="srp-header-spacer"></div>
+<div class="fixed inset-x-0 z-100">
+  <div
+    id="menu-blur"
+    class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl bg-neutral/25 dark:bg-neutral-800/25"></div>
+
+  <div class="srp-topbar relative">
+    <div class="srp-topbar-inner">
+      <div>Serving Northeast Florida</div>
+      <div>
+        <a href="tel:+19044663026">(904)&nbsp;466&nbsp;3026</a>
+        &nbsp;&middot;&nbsp;
+        <a href="mailto:shinglerenewpro@gmail.com">ShingleRenewPro@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="srp-header-bar relative">
+    <div class="m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32">
+      {{ partial "header/basic.html" . }}
+    </div>
+  </div>
+</div>
+{{ $backgroundBlur := resources.Get "js/background-blur.js" }}
+{{ $backgroundBlur = $backgroundBlur | resources.Minify | resources.Fingerprint (.Site.Params.fingerprintAlgorithm | default "sha512") }}
+<script
+  type="text/javascript"
+  src="{{ $backgroundBlur.RelPermalink }}"
+  integrity="{{ $backgroundBlur.Data.Integrity }}"
+  data-blur-id="menu-blur"></script>

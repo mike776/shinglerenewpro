@@ -1,0 +1,70 @@
+{{/*
+  Site footer — adopted from the redesign reference.
+
+  Replaces the Blowfish default (footer menu + copyright + theme
+  attribution) with the design's four-column layout. Contact details
+  are the real ones; the reference's licence number and warranty
+  claims are omitted pending verified information.
+*/}}
+
+<footer id="site-footer" class="print:hidden">
+  <div class="srp-section-inner">
+    <div class="srp-foot-grid">
+      <div>
+        {{ with site.Params.logo }}
+          {{ $logo := resources.Get . }}
+          {{ with $logo }}
+            <span class="srp-foot-logo">
+              <img src="{{ .RelPermalink }}" alt="{{ site.Title }}" width="{{ .Width }}" height="{{ .Height }}" class="nozoom">
+            </span>
+          {{ end }}
+        {{ end }}
+
+        <p class="srp-foot-about">
+          Professional roof rejuvenation for asphalt shingle roofs.
+          Preserve &middot; Restore &middot; Protect.
+        </p>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="/what-we-do">What We Do</a>
+        <a href="/how-it-works">How It Works</a>
+        <a href="/why-renew">Why Renew</a>
+        <a href="/about">About Us</a>
+        <a href="/faq">FAQ</a>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:+19044663026">(904) 466 3026</a></p>
+        <p><a href="mailto:shinglerenewpro@gmail.com">ShingleRenewPro@gmail.com</a></p>
+        <p><a href="/contact">Request an assessment</a></p>
+      </div>
+
+      <div>
+        <h4>Service Area</h4>
+        <p>Northeast Florida</p>
+        <p>Homeowners and property owners</p>
+      </div>
+    </div>
+
+    <div class="srp-foot-bottom">
+      <span>
+        &copy; {{ now.Format "2006" }} {{ site.Title }}. All rights reserved.
+      </span>
+
+      <span>
+        {{ range $i, $e := site.Menus.footer }}
+          {{ if $i }}&nbsp;&middot;&nbsp;{{ end }}
+          <a href="{{ .URL }}" title="{{ .Title }}">{{ .Name | markdownify }}</a>
+        {{ end }}
+      </span>
+    </div>
+  </div>
+
+  {{/* Extend footer - eg. for extra scripts, etc. */}}
+  {{ if templates.Exists "partials/extend-footer.html" }}
+    {{ partialCached "extend-footer.html" . }}
+  {{ end }}
+</footer>
